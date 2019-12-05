@@ -1,0 +1,18 @@
+'use strict';
+
+const express = require('express');
+const router =  express.Router();
+const controller = require('../controllers/market-controller');
+
+const authService = require('../services/auth-service');
+
+const multer = require('multer');
+const multerConfig = require('../multer');
+
+router.get('/', authService.authorize, controller.get);
+router.get('/:id', authService.authorize, controller.getById);
+router.post('/', multer(multerConfig).single('image'), authService.authorize, controller.post);
+router.put('/:id', authService.authorize, controller.put);
+router.delete('/:id', authService.authorize, controller.del);
+
+module.exports = router;
