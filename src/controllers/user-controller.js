@@ -29,7 +29,8 @@ exports.autenticate = async(req, res, next) => {
             token: token,
             data: {
                 FirstName: user.FirstName,
-                LastName: user.LastName
+                LastName: user.LastName,
+                Email: user.email
             }
         });
     }catch(err) {
