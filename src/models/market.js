@@ -8,37 +8,29 @@ const schema = new Schema({
         type: String,
         required: true
     },
-    Address: [{
-        street: {
+    street: {
             type: String,
             require: true
-        },
-        number: {
-            type: Number,
-            require: true
-        },
-        district: {
-            type: String,
-            require: true
-        }
-    }],
-    geolocation: [{
-        latitude: {
-            type: String,
-            require: true
-        },
-        longitude: {
-            type: String,
-            require: true
-        }
-    }],
+    },
+    num: {
+        type: Number,
+        require: true
+    },
+    district: {
+        type: String,
+        require: true
+    },
+    latitude: {
+        type: Number,
+        require: true
+    },
+    longitude: {
+        type: Number,
+        require: true
+    },
     image: {
         type: String
     },
-    product_id: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
-    }]
 });
 
 module.exports = mongoose.model('Market', schema);
