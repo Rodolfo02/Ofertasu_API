@@ -27,11 +27,9 @@ exports.autenticate = async(req, res, next) => {
 
         res.status(201).send({
             token: token,
-            data: {
-                FirstName: user.FirstName,
-                LastName: user.LastName,
-                Email: user.email
-            }
+            FirstName: user.FirstName,
+            LastName: user.LastName,
+            Email: user.email
         });
     }catch(err) {
         res.status(500).send({
